@@ -12,6 +12,12 @@ cp .zshrc .zshrc.backup
 git clone my-shell-config /tmp
 cp /tmp/.zshrc ~/.zshrc
 source ~/.zshrc
+
+---
+# Add these if brew was installed changing the shell config to zsh(linux)
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 ```
 
 ## k9s 
