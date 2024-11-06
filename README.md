@@ -14,6 +14,33 @@ cp /tmp/.zshrc ~/.zshrc
 source ~/.zshrc
 ```
 
+## k9s 
+```
+# linux
+OUT="${XDG_CONFIG_HOME:-$HOME/.config}/k9s/skins"
+mkdir -p "$OUT"
+curl -L https://github.com/catppuccin/k9s/archive/main.tar.gz | tar xz -C "$OUT" --strip-components=2 k9s-main/dist
+
+# mac 
+OUT="${XDG_CONFIG_HOME:-$HOME/Library/Application Support}/k9s/skins"
+mkdir -p "$OUT"
+curl -L https://github.com/catppuccin/k9s/archive/main.tar.gz | tar xz -C "$OUT" --strip-components=2 k9s-main/dist
+
+k9s:
+  ui:
+    skin: catppuccin-mocha
+    # ...or another flavor:
+    # skin: catppuccin-macchiato
+    # skin: catppuccin-frappe
+    # skin: catppuccin-latte
+
+    # ...or the transparent variants:
+    # skin: catppuccin-mocha-transparent
+    # skin: catppuccin-macchiato-transparent
+    # skin: catppuccin-frappe-transparent
+    # skin: catppuccin-latte-transparent
+```
+
 ## Install fonts Ubuntu
 ```
 sudo mkdir -p /usr/share/fonts/truetype/custom/
